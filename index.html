@@ -1,419 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://tsowei.github.io">
-  <title>tsowei的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="tsowei的博客">
-<meta property="og:url" content="https://tsowei.github.io/index.html">
-<meta property="og:site_name" content="tsowei的博客">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tsowei的博客">
-  
-    <link rel="alternative" href="/atom.xml" title="tsowei的博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link rel="stylesheet" href="/main.css">
-  
-
-</head>
-
-<body>
-  <div id="container">
-    <div class="left-col">
-      <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img src="/img/avatar.jpg" class="js-avatar">
-			
-		</a>
-
-		<hgroup>
-		  <h1 class="header-author"><a href="/">lee</a></h1>
-		</hgroup>
-
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style rel="text/stylesheet">
+		body,div{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #ddd;
+			padding: 2.5% 0;
+		}
 		
+		#screen,
+		.unit,
+		#showPoint,
+		#setting,
+		#randomColorTogger
+		{
+			box-shadow: 3px 5px 6px #888888;
 
-		<nav class="header-menu">
-			<ul>
+		}
+		#gameWrap{
+			margin: 0 auto;
+			width:360px;
+			height:420px;
 			
-				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/tags/随笔">随笔</a></li>
-	        
+			overflow: hidden;			
+			position: relative;
+			padding: 5% 0;
+		}
+		#setting{
+			width: 118px;
+			height:420px;
+			background-color: rgba(245, 245, 245,0.5);
+			position: absolute;
+			right:0;
+			top:0;
+		}
+		#screen{
+			width:260px;
+			height:420px;
+			background: #f3f5f5;
+			position: absolute;
+			left: -20px;
+			top:0;
+		}
+		#screen>div{
+			position: relative;
+		}
+		.unit{
+			position:absolute;
+			width:20px;
+			height:20px;
+			border: 1px solid #336699;
+			border-radius:3px;
+			box-sizing: border-box;
+			background: rgb(167, 240, 206);
+			filter:alpha:(opacity=70);
+			opacity: 0.7;
+		}
+		#showPoint {
+			position:absolute;
+			right:10px;
+			top:20px;
+			background: #444;
+			width:100px;
+			height:50px;
+			font-size: 22px;
+			text-align: center;
+			line-height: 10px;
+			color: red;
+			font-weight:bold; 
+			transform:rotate(10deg);
+			}
+		#randomColorToggler,
+		#restart,
+		#pauseToggler,
+		#guide {
+			width: 80px;
+			height:30px;
+			font-size:12px;
+			position:absolute;
+			right:20px;
+			top:110px;
+			background-color:rgba(220,0,0,0.4);
+			color:#fff;
+		}	
+		#restart{top:160px;}
+		#pauseToggler{top:210px;}
+		#copyright{
+			font-size: 16px;
+			margin:0 auto;
+			text-align: center;
+			color: #666;
+			background-color: #f6f6f6;
+		}
+		#guide{
+			height: auto;
+			top:256px;
+			font-size: 14px;
+			line-height: 28px;
+			right:10px;
+			padding-left: 20px;
+			list-style: square;
+		}
+		#guide>li:first-child{
+			line-height: 22px;
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+	<section id = 'gameWrap'>
+		<div id ="screen">
+		</div>
+		<nav id="setting">
+			<div id="showPoint"><p>0</p></div>
+			<button id="randomColorToggler">随机色开</button>
+			<button id="restart">重新开始</button>
+			<button id="pauseToggler">暂停</button>
+			<ul id="guide">
+				<li>引导:</li>
+				<li>w:变换方向</li>
+				<li>s:迅速下降</li>
+				<li>d:向左移动</li>
+				<li>a:向右移动</li>
 			</ul>
 		</nav>
-		<nav class="header-smart-menu">
-	        
-    		
-    			
-    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
-    			
-    			
-            
-    			
-    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
-    			
-    			
-            
-    			
-    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
-    			
-    			
-            
-    			
-    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
-    			
-    			
-            
-		</nav>
-		<nav class="header-nav">
-			<div class="social">
-				
-					<a class="github" target="_blank" href="https://github.com/tsowei" title="github">github</a>
-		        
-					<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-		        
-			</div>
-		</nav>
-	</header>		
-</div>
-
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"><i class="icon-list"></i></div>
-  		<h1 class="header-author js-mobile-header hide">lee</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-				
-					<img src="/img/avatar.jpg" class="js-avatar">
-				
-			</div>
-			<hgroup>
-			  <h1 class="header-author">lee</h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/tags/随笔">随笔</a></li>
-		        
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/tsowei" title="github">github</a>
-			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
-
-      <div class="body-wrap">
-        
-  
-    <article id="npm-webpack" class="article article-type-npm" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/webpack/">webpack 使用教程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>原文链接：<a href="https://www.zfanw.com/blog/webpack-tutorial.html">https://www.zfanw.com/blog/webpack-tutorial.html</a><br>对于初学者来说是一篇易懂的 <code>webpack</code> 使用教程。 —— 由 <code>Aisinwang</code> 分享</p>
-</blockquote>
-<p>我还记得我刚接触<strong>webpack</strong> 时的心情：零零碎碎。</p>
-<p>就没个简单、现成、完整的方案？我是说，我真的不太关心 js 文件要配什么加载器。我只想快一点把开发环境搭起来好干活。总之，几经折腾，我嫌麻烦放弃了 <strong>webpack</strong> 这个方案。</p>
-<p>但今天回头去看，其实它并没那么复杂。</p>
-<p>那么，<strong>webpack</strong> 是什么？</p>
-<blockquote>
-<p>MODULE BUNDLER</p>
-</blockquote>
-<p>它是这么自称的，<strong>模块打包器</strong>。</p>
-<p>在 <strong>webpack</strong> 里，所有类型的文件都可以是模块，包含我们最常见的 JavaScript，以及 css 文件、图片、json 文件等等。通过 <strong>webpack</strong> 的各种加载器，我们可以<strong>更有效地管理这些文件</strong>。<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2016/11/16/webpack/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/11/16/webpack/" class="archive-article-date">
-  	<time datetime="2016-11-16T00:17:15.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-16</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="npm-express1" class="article article-type-npm" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/express1/">Express框架</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a><font color="#C71585">1. <strong>概述</strong></font></h2><blockquote>
-<p><strong>Express</strong>是目前最流行的基于<strong>Node.js</strong>的Web开发框架，可以快速地搭建一个完整功能的网站。</p>
-</blockquote>
-<p><strong>Express</strong>上手非常简单，首先新建一个项目目录，假定叫做<code>hello-world</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mkdir hello-world</div></pre></td></tr></table></figure></p>
-<p>进入该目录，新建一个<code>package.json</code>文件，内容如下<br>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2016/11/16/express1/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/11/16/express1/" class="archive-article-date">
-  	<time datetime="2016-11-15T23:17:15.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-16</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Express/">Express</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-      </div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2016 lee
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
-  </div>
-</footer>
-    </div>
-    <script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: false,
-		animate: true,
-		isHome: true,
-		isPost: false,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false,
-		root: "/",
-		innerArchive: true
-	}
-</script>
-
-<script src="/./main.js"></script>
-
-
-    
-<div class="tools-col">
-  <ul class="btn-wrap">
-    
-      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
-    
-    
-      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
-    
-    
-      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
-    
-    
-      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
-    
-  </ul>
-  <div class="tools-wrap">
-    
-    	<section class="tools-section tools-section-all chose">
-    	</section>
-    
-
-    
-    	<section class="tools-section tools-section-tag">
-    			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/Express/" style="font-size: 10px;">Express</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
-    			</div>
-    	</section>
-    
-
-    
-    	<section class="tools-section tools-section-friends">
-  		
-  			<div class="friends-wrap" id="js-friends">
-  			
-  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
-  	        
-  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
-  	        
-  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
-  	        
-  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
-  	        
-  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
-  	        
-  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
-  	        
-  	        </div>
-  		
-    	</section>
-    
-
-    
-    	<section class="tools-section tools-section-me">
-  	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
-  	  	
-    	</section>
-    
-  </div>
-  
-</div>
-    <!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-
-            <div class="pswp__top-bar">
-
-                <!--  Controls are self-explanatory. Order can be changed. -->
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-  </div>
-</body>
-</html>
+	</section>
+	<footer>
+		<div id="copyright">
+		Copyright © 1998 - 
+		<span>
+		<script>document.write(new Date().getFullYear());
+		</script>
+		</span> tsoweilee@163.com. <a target="_blank" href="https://tsowei.github.io" rel="nofollow">All Rights Reserved.</a>
+		</div>
+	</footer>
+<script type="text/javascript" src="main.js"></script></body>
+</html>												
