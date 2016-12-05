@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>a game</title>
+	<meta name="keyword" content="javascript game" />
+	<meta name="description" content="a javascript\'s game" />		
+	<meta name="author" content="tsoweilee@163.com" />
+	<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="https://yui-s.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+<body>
+	<section id = 'gameWrap'>
+		<div id ="screen">
+		</div>
+		<nav id="setting">
+			<div id="showPoint"><p>0</p></div>
+			<button id="randomColorToggler">随机色开</button>
+			<button id="restart">重新开始</button>
+			<button id="pauseToggler">暂停</button>
+			<div id="rate">
+			<label for="#progress">难度系数:<span>0</span></label>
+			<progress  id="progress" value=0 max=60>
+			</progress>
+			</div>
+		</nav>
+		<footer>	
+			<ul id="guide" class="clearfix">
+				<li><button id='left' class="pure-button pure-button-primary">&#8592;A</button></li>
+				<li><button id='down' class="pure-button pure-button-primary">S&#8595;</button></li>
+				<li><button id='up' class="pure-button pure-button-primary">W&#8593;</button></li>
+				<li><button id='right' class="pure-button pure-button-primary">D&#8594;</button></li>
+			</ul>
+			<div  id="copyright">
+				Copyright © 1998 - <script>document.write((new Date()).getFullYear())</script>
+				 <a target="_blank" href="https://tsowei.github.io" rel="nofollow"><span>tsoweilee@163.com</span></a>
+			</div>
+		</footer>
+		<div id = 'dialog'>
+			<span></span>
+			<button class="pure-button pure-button-primary">确认
+			</button>
+		</div>
+	</section>
+<script type="text/javascript" src="main0ef3411ab47c613228be.js"></script></body>
+</html>												
